@@ -1,0 +1,36 @@
+@media (min-width: 576px) {
+   
+}
+
+@media (min-width: 992px) {
+    
+}
+body{
+    background-color: #261b1b2e !important;
+}
+.search-box{
+    background-color: white !important;
+    color: black !important;
+}
+
+.nav-item .nav-link{
+    background-color: grey;
+    color: black;
+    margin-left: 5px;
+}
+.nav-link:hover{
+    background-color: #e8b456;
+    color: white;
+}
+.navbar-brand{
+    color: #e8b456 !important;
+}
+.card-title{
+    color: green !important;
+}
+.card-text{
+    color: red !important;
+}
+.card-img-top{
+    height: 230px !important;
+}
