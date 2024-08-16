@@ -1,0 +1,54 @@
+/* Write your desired css here */
+.app-container {
+    background-color: rgba(245, 245, 220, 0.75);
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 23%;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+}
+.app-container h1{
+    color: #840707c4;
+}
+.dropzone{
+    background-color: white;
+    width: 100%;
+    padding: 2rem;
+    text-align: center;
+    border: 2px dotted #840707c4;
+    border-radius: 5px;
+}
+.dropzone span{
+    color: #840707c4;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.file-list{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.file-list img {
+    width: 30px;
+    height: 30px;
+}
+.file-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: beige;
+    gap: 1rem;
+    border-radius: 5px;
+}
+.file-item:hover{
+    background-color: lightgray;
+}
+.description{
+    height: 23px;
+    font-size: small;
+}
