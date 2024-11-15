@@ -36,4 +36,24 @@ function movesZerosBetter(nums){
      return nums;
 }
 
-console.log(movesZerosBetter([1,0,0,1,2,5,0]));
+// most optimal approach
+//here we will swap our fast with slow whenerver we find non zero in array
+
+function moveZerosOptimal(nums){
+    let fast=0, slow=0;
+    while(fast<nums.length){
+        //if fast is not zero
+        if(nums[fast]!==0){
+            //swap it with slow
+            [nums[fast],nums[slow]] = [nums[slow],nums[fast]];
+            fast++;
+            slow++;
+        }else{
+            // if fast is zero move fast
+            fast++;
+        }
+    }
+    return nums;
+}
+
+console.log(moveZerosOptimal([1,0,0,1,2,5,0]));
