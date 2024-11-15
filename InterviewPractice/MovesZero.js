@@ -1,5 +1,5 @@
+//brute force approach
 function moveZeroes(nums) {
-    //brute force approach
     let result = [];
     let zeroCount = 0;
     for (let i=0;i<nums.length;i++){
@@ -16,4 +16,24 @@ function moveZeroes(nums) {
     return result;
 }
 
-console.log(moveZeroes([1,0,0,1,2,5,0]));
+ //better approach
+function movesZerosBetter(nums){
+     let fast=0, slow=0;
+     while(fast<nums.length){
+         if(nums[fast]!==0){
+             nums[slow] = nums[fast];
+             fast++;
+             slow++;
+         }else{
+             fast++;
+         }
+     }
+     //when fast pointer finishes its iteration then iterate from slow to end and make all of them 0
+     while(slow<nums.length){
+         nums[slow] = 0;
+         slow++;
+     }
+     return nums;
+}
+
+console.log(movesZerosBetter([1,0,0,1,2,5,0]));
