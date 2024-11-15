@@ -1,5 +1,6 @@
 /* Write your desired css here */
 .app-container {
+    margin-top: 1rem;
     background-color: rgba(245, 245, 220, 0.75);
     position: absolute;
     display: flex;
@@ -7,7 +8,7 @@
     align-items: center;
     justify-content: center;
     margin-left: 23%;
-    padding: 2rem;
+    padding: 1.5rem;
     border-radius: 10px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
 }
