@@ -26,4 +26,43 @@ function longestSubarrayHavingSumK(N,K,nums) {
     }
     return maxLength;
 }
-console.log(longestSubarrayHavingSumK(6,15,[10,5,2,7,1,9]));
+
+//prefix sum / cumulative sum approach --> optimal solution
+// arr = [10, 5, 2, 7, 1, 9]
+// cm =  [10,15,17,24,25,34]
+// if we substract  25-10, then we will get 15 so the answer is [5,2,7,1]
+function longestSubarrayHavingSumKOptimal(N,K,nums) {
+    let maxLength = 0;
+    let sum = 0;
+
+    let mp = new Map();
+
+    //set sum 0 at -1 index to handle edge case
+    mp.set(0,-1);
+
+    //iterate over the array
+    for(let i=0;i<N;i++){
+        //calculate cumulative sum
+        sum += nums[i];
+        //get subtrahend, the value whihc needs to be subtracted from the cumulative sum to get sum K
+        let subtrahend = sum-K;
+
+        //if map has subtrahend
+        if(mp.has(subtrahend)){
+            //find index of subtrahend
+            let indexSubtra = mp.get(subtrahend);
+            //calculate length
+            let length = i-indexSubtra;
+            //update the maxlength
+            maxLength = Math.max(maxLength, length);
+        }
+        //if map does not have cumulative sum
+        if(!mp.has(sum)){
+            //set the cumulative sum at index i
+            mp.set(sum,i);
+        }
+    }
+    return maxLength
+
+}
+console.log(longestSubarrayHavingSumKOptimal(6,15,[10,5,2,7,1,9]));
